@@ -60,10 +60,10 @@ public class AssinaturaDigital {
 		
 		if(clientSig.verify(assinatura)) { // Mensagem corretamente assinada
 			System.out.println("O Arquivo recebido foi assinado corretamente.");
-			//java.awt.Desktop.getDesktop().open(arquivo);
+			java.awt.Desktop.getDesktop().open(arquivo);
 		}
-		else { // Mensagem n„o pode ser validada
-			System.out.println("O Arquivo recebido N√O pode ser validada.");
+		else { // Mensagem n√£o pode ser validada
+			System.out.println("O Arquivo recebido N√ÉO pode ser validada.");
 		}
 	}
 	
@@ -86,14 +86,14 @@ public class AssinaturaDigital {
 		InvalidKeyException, SignatureException, IOException, NoSuchAlgorithmException, InvalidKeySpecException {
 						
 			Scanner in = new Scanner(System.in);
-			System.out.printf("1 - Assinar Documento\n2 - Verificar Assinatura Digital\n0 - Sair\n> OpÁ„o: ");
+			System.out.printf("1 - Assinar Documento\n2 - Verificar Assinatura Digital\n0 - Sair\n> Op√ß√£o: ");
 			int escolha = in.nextInt();
 			
 			while(escolha != 0) {
 				switch(escolha) {
 				case 1:
 					in = new Scanner(System.in);
-					System.out.println("Digite o nome do documento e extens„o[Exemplo na Raiz do Projeto (texto.txt)]: ");
+					System.out.println("Digite o nome do documento e extens√£o[Exemplo na Raiz do Projeto (texto.txt)]: ");
 					String nomeDoArquivo = in.nextLine();
 					File arquivo = new File(nomeDoArquivo);
 					
@@ -103,7 +103,7 @@ public class AssinaturaDigital {
 					break;
 				case 2:
 					in = new Scanner(System.in);
-					System.out.println("Digite o nome do documento e extens„o[Arquivo deve estar presente na raiz do Projeto]: ");
+					System.out.println("Digite o nome do documento e extens√£o[Arquivo deve estar presente na raiz do Projeto]: ");
 					String nome = in.nextLine();
 					
 					arquivo = new File(nome);
@@ -119,11 +119,11 @@ public class AssinaturaDigital {
 				case 0:
 					break;
 				default:
-					System.out.println("OpÁ„o inv·lida.");
+					System.out.println("Op√ß√£o inv√°lida.");
 					break;
 				}
 				in = new Scanner(System.in);
-				System.out.printf("\n1 - Assinar Documento\n2 - Verificar Assinatura Digital\n0 - Sair\n> OpÁ„o: ");
+				System.out.printf("\n1 - Assinar Documento\n2 - Verificar Assinatura Digital\n0 - Sair\n> Op√ß√£o: ");
 				escolha = in.nextInt();
 			}
 		}
